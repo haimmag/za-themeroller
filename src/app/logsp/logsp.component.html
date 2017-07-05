@@ -36,7 +36,7 @@
         </div>
         <div *ngIf="mobile_preview=='ios'" flex layout="row">
           <app-ios-layout [backgroundColor]="bgColor">
-            <app-info-page [textColor]="textColor" [safeColor]="safeColor"></app-info-page>
+            <app-info-page [textColor]="textColor" [safeColor]="safeColor" [riskColor]="riskColor"></app-info-page>
           </app-ios-layout>
         </div>
         <div *ngIf="mobile_preview=='android'" flex layout="row">
@@ -51,7 +51,7 @@
         </div>
         <div *ngIf="mobile_preview=='android'" flex layout="row">
           <app-android-layout [backgroundColor]="bgColor">
-            <app-info-page [textColor]="textColor" [safeColor]="safeColor"></app-info-page>
+            <app-info-page [textColor]="textColor" [safeColor]="safeColor" [riskColor]="riskColor"></app-info-page>
           </app-android-layout>
         </div>
         <div flex>
