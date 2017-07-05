@@ -21,34 +21,84 @@
     <md-card-title>Main Page</md-card-title>
     <md-divider></md-divider>
     <md-card-content>
+
+      <p>
+        <md-radio-group [(ngModel)]="mobile_preview">
+          <md-radio-button value="ios">IOS Preview</md-radio-button>&nbsp;&nbsp;
+          <md-radio-button value="android">ANDROID Preview</md-radio-button>
+        </md-radio-group>
+      </p>
+
+      <md-divider></md-divider>
+
+      <p></p>
+
       <div layout="row">
-        <div flex layout="row" class="push-right push-left">
-          <div class="ios-device"></div>
+        <div *ngIf="mobile_preview=='ios'" flex layout="row">
+          <app-ios-layout [backgroundColor]="bgColor">
+            <app-main-page></app-main-page>
+          </app-ios-layout>
+        </div>
+        <div *ngIf="mobile_preview=='ios'" flex layout="row">
+          <app-ios-layout [backgroundColor]="bgColor">
+            <app-main-page></app-main-page>
+          </app-ios-layout>
+        </div>
+        <div *ngIf="mobile_preview=='ios'" flex layout="row">
+          <app-ios-layout [backgroundColor]="bgColor">
+            <app-main-page></app-main-page>
+          </app-ios-layout>
+        </div>
+        <div *ngIf="mobile_preview=='android'" flex layout="row">
+          <app-android-layout [backgroundColor]="bgColor">
+            <app-main-page></app-main-page>
+          </app-android-layout>
+        </div>
+        <div *ngIf="mobile_preview=='android'" flex layout="row">
+          <app-android-layout [backgroundColor]="bgColor">
+            <app-main-page></app-main-page>
+          </app-android-layout>
+        </div>
+        <div *ngIf="mobile_preview=='android'" flex layout="row">
+          <app-android-layout [backgroundColor]="bgColor">
+            <app-main-page></app-main-page>
+          </app-android-layout>
         </div>
         <div flex>
           <form class="example-form">
             <md-input-container class="example-full-width">
-              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color" [value]="color"/>
+              <input mdInput placeholder="Background color" [(colorPicker)]="bgColor" [style.background]="bgColor"
+                     [value]="bgColor"/>
             </md-input-container>
             <br>
             <md-input-container class="example-full-width">
-              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color" [value]="color"/>
+              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color"
+                     [value]="color"/>
             </md-input-container>
             <br>
             <md-input-container class="example-full-width">
-              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color" [value]="color"/>
+              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color"
+                     [value]="color"/>
             </md-input-container>
             <br>
             <md-input-container class="example-full-width">
-              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color" [value]="color"/>
+              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color"
+                     [value]="color"/>
             </md-input-container>
             <br>
             <md-input-container class="example-full-width">
-              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color" [value]="color"/>
+              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color"
+                     [value]="color"/>
             </md-input-container>
             <br>
             <md-input-container class="example-full-width">
-              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color" [value]="color"/>
+              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color"
+                     [value]="color"/>
+            </md-input-container>
+            <br>
+            <md-input-container class="example-full-width">
+              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color"
+                     [value]="color"/>
             </md-input-container>
             <br>
           </form>

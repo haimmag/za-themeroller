@@ -16,6 +16,10 @@ import { SharedModule } from './shared/shared.module';
 
 import { USER_PROVIDER, USERS_API } from './users';
 import {ColorPickerModule} from 'ngx-color-picker';
+import { IosLayoutComponent } from './logsp/components/ios-layout/ios-layout.component';
+import { AndroidLayoutComponent } from './logsp/components/android-layout/android-layout.component';
+import { MainPageComponent } from './logsp/components/main-page/main-page.component';
+import { MdRadioModule } from '@angular/material';
 
 const httpInterceptorProviders: Type<any>[] = [
   RequestInterceptor,
@@ -29,6 +33,9 @@ export function getAPI(): string {
   declarations: [
     AppComponent,
     routedComponents,
+    IosLayoutComponent,
+    AndroidLayoutComponent,
+    MainPageComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     AppRoutingModule,
@@ -43,6 +50,7 @@ export function getAPI(): string {
     CovalentHighlightModule,
     CovalentMarkdownModule,
     ColorPickerModule,
+    MdRadioModule,
   ], // modules needed to run this module
   providers: [
     httpInterceptorProviders,

@@ -1,6 +1,6 @@
-# Covalent QuickStart
+# ZoneAlarm Theme Roller
 
-Quickstart App with @covalent packages
+ZoneAlarm Theme Roller App
 
 ## Setup
 

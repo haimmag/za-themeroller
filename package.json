@@ -9,7 +9,7 @@
     "reusable"
   ],
   "scripts": {
-    "start": "ng serve",
+    "start": "ng serve --host=192.168.108.135",
     "e2e": "ng e2e",
     "lint": "ng lint",
     "reinstall": "rm -rf node_modules tmp deploy dist && npm i",
