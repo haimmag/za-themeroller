@@ -1,0 +1,24 @@
+<div>
+  <div class="za-logo">&nbsp;</div>
+
+  <div class="scanning push-top-xl" [ngStyle]="{'color': textColor}">
+    SCANNING...
+  </div>
+
+  <div id="cont" data-pct="25">
+    <svg id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <circle id="outer" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48"
+              stroke-dashoffset="0"></circle>
+      <circle id="bar" r="74" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48"
+              stroke-dashoffset="0"></circle>
+      <circle id="bar-inner" r="67" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48"
+              style="stroke-dashoffset:-312;"></circle>
+
+    </svg>
+  </div>
+
+  <div class="scanning-cancel push-top" [ngStyle]="{'color': textColor}">
+    Cancel
+  </div>
+
+</div>

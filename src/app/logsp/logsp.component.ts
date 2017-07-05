@@ -13,7 +13,10 @@ import { ItemsService, ProductsService } from '../../services';
 })
 export class LogspComponent implements AfterViewInit, OnInit {
 
-  color: string = '#127bdc';
+  mobile_preview = 'ios';
+  bgColor: string = '#127bdc';
+  textColor: string = '#fff';
+  color: string = '#fff';
 
   constructor(private _titleService: Title,
               private _itemsService: ItemsService,
