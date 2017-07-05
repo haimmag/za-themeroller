@@ -19,7 +19,10 @@ import {ColorPickerModule} from 'ngx-color-picker';
 import { IosLayoutComponent } from './logsp/components/ios-layout/ios-layout.component';
 import { AndroidLayoutComponent } from './logsp/components/android-layout/android-layout.component';
 import { MainPageComponent } from './logsp/components/main-page/main-page.component';
+import { GenerateComponent } from './logsp/components/generate/generate.component';
 import { MdRadioModule } from '@angular/material';
+import { CovalentDialogsModule } from '@covalent/core';
+import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 
 const httpInterceptorProviders: Type<any>[] = [
   RequestInterceptor,
@@ -36,6 +39,7 @@ export function getAPI(): string {
     IosLayoutComponent,
     AndroidLayoutComponent,
     MainPageComponent,
+    GenerateComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     AppRoutingModule,
@@ -51,6 +55,8 @@ export function getAPI(): string {
     CovalentMarkdownModule,
     ColorPickerModule,
     MdRadioModule,
+    CovalentDialogsModule,
+    CovalentDynamicFormsModule
   ], // modules needed to run this module
   providers: [
     httpInterceptorProviders,
@@ -58,7 +64,9 @@ export function getAPI(): string {
       provide: USERS_API, useFactory: getAPI,
     }, USER_PROVIDER,
   ], // additional providers needed for this module
-  entryComponents: [ ],
+  entryComponents: [
+    GenerateComponent,
+  ],
   bootstrap: [ AppComponent ],
 })
 export class AppModule {}

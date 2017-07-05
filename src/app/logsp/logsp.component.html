@@ -1,24 +1,13 @@
-<td-layout-nav-list #navList
-                    logo="assets:covalent"
-                    [opened]="media.registerQuery('gt-sm') | async"
-                    [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
-                    [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
-  <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && navList.close()">
+<md-toolbar color="primary">
+  <span>
+      <img style="vertical-align:middle; height:48px;width:48px;" src="assets/images/transparentZa.png" />
+      <span style="margin-right:150px; font-style:italic;">ZoneAlarm ThemeRoller</span>
+      <button md-raised-button color="accent" class="text-upper" (click)="doGenerate()">Generate...</button>
+    </span>
+  <md-icon style="text-align:right;flex: 1 1 auto;">more_vert</md-icon>
+</md-toolbar>
 
-    <a md-list-item [routerLink]="['/logs']">
-      <md-icon md-list-avatar>account_balance</md-icon>
-      <h3 md-line> Main </h3>
-      <p md-line> Main landing </p>
-    </a>
-    <md-divider *ngIf="!last" md-inset></md-divider>
-
-  </md-nav-list>
-  <div td-toolbar-content layout="row" layout-align="center center" flex>
-    <span></span>
-    <span flex></span>
-  </div>
   <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
-    <md-card-title>Main Page</md-card-title>
     <md-divider></md-divider>
     <md-card-content>
 
@@ -113,9 +102,8 @@
 
   <td-layout-footer>
     <div layout="row" layout-align="start center">
-      <span class="md-caption">Copyright &copy; 2016 check point. All rights reserved</span>
+      <span class="md-caption">Copyright &copy; 2017 check point. All rights reserved</span>
       <span flex></span>
       <md-icon class="md-icon-ux" svgIcon="assets:teradata-ux"></md-icon>
     </div>
   </td-layout-footer>
-</td-layout-nav-list>
