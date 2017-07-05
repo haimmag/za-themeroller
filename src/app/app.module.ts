@@ -20,6 +20,7 @@ import { IosLayoutComponent } from './logsp/components/ios-layout/ios-layout.com
 import { AndroidLayoutComponent } from './logsp/components/android-layout/android-layout.component';
 import { MainPageComponent } from './logsp/components/main-page/main-page.component';
 import { MdRadioModule } from '@angular/material';
+import { RiskPageComponent } from './logsp/components/risk-page/risk-page.component';
 
 const httpInterceptorProviders: Type<any>[] = [
   RequestInterceptor,
@@ -36,6 +37,7 @@ export function getAPI(): string {
     IosLayoutComponent,
     AndroidLayoutComponent,
     MainPageComponent,
+    RiskPageComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     AppRoutingModule,
