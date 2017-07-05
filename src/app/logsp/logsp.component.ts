@@ -1,9 +1,13 @@
-import { Component, AfterViewInit, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, AfterViewInit, OnInit, ChangeDetectorRef, ViewContainerRef } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
 
-import { TdLoadingService, TdMediaService } from '@covalent/core';
+import { TdLoadingService, TdMediaService, TdDialogService } from '@covalent/core';
 
 import { ItemsService, ProductsService } from '../../services';
+import { ITdDynamicElementConfig, TdDynamicElement, TdDynamicType } from '@covalent/dynamic-forms';
+import { GenerateComponent } from './components/generate/generate.component';
+
+import {MdDialog, MdDialogRef, MdDialogConfig, MD_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'qs-logsp',
@@ -22,17 +26,33 @@ export class LogspComponent implements AfterViewInit, OnInit {
   analyzingColor: string ="#f94675";
   color: string = '#fff';
 
-  constructor(private _titleService: Title,
-              private _itemsService: ItemsService,
-              private _productsService: ProductsService,
-              private _loadingService: TdLoadingService,
-              private _changeDetectorRef: ChangeDetectorRef,
-              public media: TdMediaService) {
+  dialogRef:MdDialogRef<GenerateComponent>;
+
+  constructor(private _titleService:Title,
+              private _itemsService:ItemsService,
+              private _productsService:ProductsService,
+              private _loadingService:TdLoadingService,
+              private _changeDetectorRef:ChangeDetectorRef,
+              public media:TdMediaService,
+              private _dialogService:TdDialogService,
+              private _viewContainerRef: ViewContainerRef) {
 
   }
 
-  ngOnInit(): void {
+  ngOnInit():void {
 
+  }
+
+  doGenerate():void {
+
+    this.dialogRef = this._dialogService.open(GenerateComponent, {width: '600px'});
+    this.dialogRef.componentInstance.dialogRef = this.dialogRef;
+    this.dialogRef.afterClosed().subscribe((newValue:Object) => {
+      debugger;
+      if (newValue != 'cancel') {
+        debugger;
+      }
+    })
   }
 
   ngAfterViewInit(): void {

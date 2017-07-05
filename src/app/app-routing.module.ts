@@ -13,6 +13,7 @@ import { LogspComponent } from './logsp/logsp.component';
 import { DetailComponent } from './detail/detail.component';
 import { LoginComponent } from './login/login.component';
 import { FormComponent } from './form/form.component';
+import { CovalentDialogsModule } from '@covalent/core';
 
 const routes: Routes = [
     {

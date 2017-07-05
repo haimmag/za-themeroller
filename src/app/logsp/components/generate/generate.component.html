@@ -1,0 +1,7 @@
+<td-dynamic-forms #frm [elements]="elements">
+</td-dynamic-forms>
+
+<p style="text-align:right">
+  <button md-raised-button color="accent" [disabled]="!frm.valid" class="text-upper" (click)="doGenerate(frm)">Generate</button>
+  <button md-raised-button color="accent" class="text-upper" (click)="doCancel()">Cancel</button>
+</p>

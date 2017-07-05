@@ -22,6 +22,9 @@ import { MainPageComponent } from './logsp/components/main-page/main-page.compon
 import { MdRadioModule } from '@angular/material';
 import { RiskPageComponent } from './logsp/components/risk-page/risk-page.component';
 import { InfoPageComponent } from './logsp/components/info-page/info-page.component';
+import { GenerateComponent } from './logsp/components/generate/generate.component';
+import { CovalentDialogsModule } from '@covalent/core';
+import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 
 const httpInterceptorProviders: Type<any>[] = [
   RequestInterceptor,
@@ -38,6 +41,7 @@ export function getAPI(): string {
     IosLayoutComponent,
     AndroidLayoutComponent,
     MainPageComponent,
+    GenerateComponent,
     RiskPageComponent,
     InfoPageComponent,
   ], // directives, components, and pipes owned by this NgModule
@@ -55,6 +59,8 @@ export function getAPI(): string {
     CovalentMarkdownModule,
     ColorPickerModule,
     MdRadioModule,
+    CovalentDialogsModule,
+    CovalentDynamicFormsModule
   ], // modules needed to run this module
   providers: [
     httpInterceptorProviders,
@@ -62,7 +68,9 @@ export function getAPI(): string {
       provide: USERS_API, useFactory: getAPI,
     }, USER_PROVIDER,
   ], // additional providers needed for this module
-  entryComponents: [ ],
+  entryComponents: [
+    GenerateComponent,
+  ],
   bootstrap: [ AppComponent ],
 })
 export class AppModule {}
