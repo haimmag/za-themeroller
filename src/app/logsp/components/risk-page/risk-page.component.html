@@ -12,23 +12,39 @@
     <svg id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
       <circle id="outer" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48"
               stroke-dashoffset="0" [ngStyle]="{'stroke': riskColor, opacity:0.7}"></circle>
-      <circle id="bar-inner" r="72" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" [ngStyle]="{'stroke': riskColor}"></circle>
+      <circle id="bar-inner" r="72" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48"
+              [ngStyle]="{'stroke': riskColor}"></circle>
       <circle id="bar" r="63" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48"
               stroke-dashoffset="0" [ngStyle]="{'stroke': riskColor}"></circle>
     </svg>
   </div>
 
-  <div class="push-top-xl icons" [ngStyle]="{'color': textColor}">
+  <div class="icons" [ngStyle]="{'color': textColor}">
     <div layout="row" class="md-padding">
-        <div flex layout layout-align="center center">
-          MY DEVICE
+      <div flex layout="column" layout-align="center center" class="relative">
+        <div class="risk-icon round">
+            <img class="img" src="assets/za/deviceIcon.png"/>
         </div>
-      <div flex layout layout-align="center center">
-          MY APPS
+        <span class="risk-lbl">
+            MY DEVICE
+        </span>
+      </div>
+      <div flex layout="column" layout-align="center center" class="relative">
+        <div class="risk-icon round">
+          <img class="img" src="assets/za/appsIcon.png"/>
         </div>
-      <div flex layout layout-align="center center">
-          MY NETWORK
+        <span class="risk-lbl">
+            MY APPS
+        </span>
+      </div>
+      <div flex layout="column" layout-align="center center" class="relative">
+        <div class="risk-icon round">
+            <img class="img" src="assets/za/networkIcon.png"/>
         </div>
+        <span class="risk-lbl">
+            MY NETWORK
+        </span>
+      </div>
     </div>
   </div>
 

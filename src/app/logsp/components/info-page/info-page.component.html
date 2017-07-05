@@ -1,0 +1,39 @@
+<div>
+  <div class="za-logo">&nbsp;</div>
+
+  <div class="scanning push-top-xl" [ngStyle]="{'color': riskColor}">
+    RISKS DETECTED!
+  </div>
+    <div class="icons" [ngStyle]="{'color': textColor}">
+    <div layout="row">
+      <div flex layout="column" layout-align="center center" class="relative">
+        <div class="risk-icon round">
+            <img class="img" src="assets/za/deviceIcon.png"/>
+        </div>
+        <span class="risk-lbl">
+            MY DEVICE
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="md-padding">
+    <div class="risk" [ngStyle]="{'border-left': '4px solid ' + safeColor }">
+      Your device is not rooted
+    </div>
+    <div class="risk" [ngStyle]="{'border-left': '4px solid ' + safeColor }">
+      ZoneAlarm is up-to-date
+    </div>
+    <div class="risk" [ngStyle]="{'border-left': '4px solid ' + riskColor }">
+      Certifi-gate vulnerability found
+    </div>
+    <div class="risk" [ngStyle]="{'border-left': '4px solid ' + riskColor }">
+      Unknown source apps are allowed
+    </div>
+    <div class="risk" [ngStyle]="{'border-left': '4px solid ' + riskColor }">
+      UDB debugging mode is on
+    </div>
+  </div>
+
+
+</div>

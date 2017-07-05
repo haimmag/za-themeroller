@@ -72,26 +72,26 @@
   text-align: center;
   position: relative;
 
-  .round:before{
-    content: " ";
-    position: absolute;
-    border: 1px solid #aeaeae;
-    top: -7px;
-    left: 16px;
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-  }
-
   .risk-lbl{
-    padding-top: 5px;
+
   }
 
 }
 
 .risk-icon{
   .img{
-    max-width: 30px;
+    max-width: 40px;
   }
+}
+
+.risk{
+  background-color: #3a3a3a;
+  color: white;
+  padding: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-top: 5px;
+  border-radius: 1px;
+  border-left: 2px solid red;
 }
 

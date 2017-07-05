@@ -21,6 +21,7 @@ import { AndroidLayoutComponent } from './logsp/components/android-layout/androi
 import { MainPageComponent } from './logsp/components/main-page/main-page.component';
 import { MdRadioModule } from '@angular/material';
 import { RiskPageComponent } from './logsp/components/risk-page/risk-page.component';
+import { InfoPageComponent } from './logsp/components/info-page/info-page.component';
 
 const httpInterceptorProviders: Type<any>[] = [
   RequestInterceptor,
@@ -38,6 +39,7 @@ export function getAPI(): string {
     AndroidLayoutComponent,
     MainPageComponent,
     RiskPageComponent,
+    InfoPageComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     AppRoutingModule,

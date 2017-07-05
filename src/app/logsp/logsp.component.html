@@ -46,7 +46,7 @@
         </div>
         <div *ngIf="mobile_preview=='ios'" flex layout="row">
           <app-ios-layout [backgroundColor]="bgColor">
-            <app-main-page [textColor]="textColor"></app-main-page>
+            <app-info-page [textColor]="textColor" [safeColor]="safeColor"></app-info-page>
           </app-ios-layout>
         </div>
         <div *ngIf="mobile_preview=='android'" flex layout="row">
@@ -61,7 +61,7 @@
         </div>
         <div *ngIf="mobile_preview=='android'" flex layout="row">
           <app-android-layout [backgroundColor]="bgColor">
-            <app-main-page [textColor]="textColor"></app-main-page>
+            <app-info-page [textColor]="textColor" [safeColor]="safeColor"></app-info-page>
           </app-android-layout>
         </div>
         <div flex>
@@ -87,8 +87,8 @@
             </md-input-container>
             <br>
             <md-input-container class="example-full-width">
-              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color"
-                     [value]="color"/>
+              <input mdInput placeholder="Safe color" [(colorPicker)]="safeColor" [style.background]="safeColor"
+                     [value]="safeColor"/>
             </md-input-container>
             <br>
             <md-input-container class="example-full-width">
