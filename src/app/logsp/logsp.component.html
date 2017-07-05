@@ -25,12 +25,12 @@
       <div layout="row">
         <div *ngIf="mobile_preview=='ios'" flex layout="row">
           <app-ios-layout [backgroundColor]="bgColor">
-            <app-main-page [textColor]="textColor"></app-main-page>
+            <app-main-page [textColor]="textColor" [analyzingColor]="analyzingColor"></app-main-page>
           </app-ios-layout>
         </div>
         <div *ngIf="mobile_preview=='ios'" flex layout="row">
           <app-ios-layout [backgroundColor]="bgColor">
-            <app-main-page [textColor]="textColor"></app-main-page>
+            <app-risk-page [textColor]="textColor" [riskColor]="riskColor"></app-risk-page>
           </app-ios-layout>
         </div>
         <div *ngIf="mobile_preview=='ios'" flex layout="row">
@@ -40,12 +40,12 @@
         </div>
         <div *ngIf="mobile_preview=='android'" flex layout="row">
           <app-android-layout [backgroundColor]="bgColor">
-            <app-main-page [textColor]="textColor"></app-main-page>
+            <app-main-page [textColor]="textColor" [analyzingColor]="analyzingColor"></app-main-page>
           </app-android-layout>
         </div>
         <div *ngIf="mobile_preview=='android'" flex layout="row">
           <app-android-layout [backgroundColor]="bgColor">
-            <app-main-page [textColor]="textColor"></app-main-page>
+            <app-risk-page [textColor]="textColor" [riskColor]="riskColor"></app-risk-page>
           </app-android-layout>
         </div>
         <div *ngIf="mobile_preview=='android'" flex layout="row">
@@ -66,13 +66,13 @@
             </md-input-container>
             <br>
             <md-input-container class="example-full-width">
-              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color"
-                     [value]="color"/>
+              <input mdInput placeholder="Analyzing color" [(colorPicker)]="analyzingColor" [style.background]="analyzingColor"
+                     [value]="analyzingColor"/>
             </md-input-container>
             <br>
             <md-input-container class="example-full-width">
-              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color"
-                     [value]="color"/>
+              <input mdInput placeholder="Risk color" [(colorPicker)]="riskColor" [style.background]="riskColor"
+                     [value]="riskColor"/>
             </md-input-container>
             <br>
             <md-input-container class="example-full-width">

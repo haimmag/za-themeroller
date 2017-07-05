@@ -20,6 +20,10 @@ export class LogspComponent implements AfterViewInit, OnInit {
   mobile_preview = 'ios';
   bgColor: string = '#127bdc';
   textColor: string = '#fff';
+  threatColor: string = "#CC2436";
+  riskColor: string = "#ff8b19";
+  safeColor: string ="#7AB53D";
+  analyzingColor: string ="#f94675";
   color: string = '#fff';
 
   dialogRef:MdDialogRef<GenerateComponent>;

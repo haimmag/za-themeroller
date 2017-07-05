@@ -8,6 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class MainPageComponent implements OnInit {
 
   @Input() textColor = '#fff';
+  @Input() analyzingColor = '#f94675';
 
   constructor() { }
 

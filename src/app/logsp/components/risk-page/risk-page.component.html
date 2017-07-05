@@ -1,0 +1,35 @@
+<div>
+  <div class="za-logo">&nbsp;</div>
+
+  <div class="scanning push-top-xl" [ngStyle]="{'color': riskColor}">
+    RISKS DETECTED!
+  </div>
+  <div class="scanning now" [ngStyle]="{'color': textColor}">
+    Just now
+  </div>
+
+  <div id="cont" data-pct="X" [ngStyle]="{'color': riskColor}">
+    <svg id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <circle id="outer" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48"
+              stroke-dashoffset="0" [ngStyle]="{'stroke': riskColor, opacity:0.7}"></circle>
+      <circle id="bar-inner" r="72" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" [ngStyle]="{'stroke': riskColor}"></circle>
+      <circle id="bar" r="63" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48"
+              stroke-dashoffset="0" [ngStyle]="{'stroke': riskColor}"></circle>
+    </svg>
+  </div>
+
+  <div class="push-top-xl icons" [ngStyle]="{'color': textColor}">
+    <div layout="row" class="md-padding">
+        <div flex layout layout-align="center center">
+          MY DEVICE
+        </div>
+      <div flex layout layout-align="center center">
+          MY APPS
+        </div>
+      <div flex layout layout-align="center center">
+          MY NETWORK
+        </div>
+    </div>
+  </div>
+
+</div>
