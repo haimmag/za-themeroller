@@ -1,0 +1,71 @@
+<td-layout-nav-list #navList
+                    logo="assets:covalent"
+                    [opened]="media.registerQuery('gt-sm') | async"
+                    [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+                    [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
+  <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && navList.close()">
+
+    <a md-list-item [routerLink]="['/logs']">
+      <md-icon md-list-avatar>account_balance</md-icon>
+      <h3 md-line> Main </h3>
+      <p md-line> Main landing </p>
+    </a>
+    <md-divider *ngIf="!last" md-inset></md-divider>
+
+  </md-nav-list>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
+    <span></span>
+    <span flex></span>
+  </div>
+  <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+    <md-card-title>Main Page</md-card-title>
+    <md-divider></md-divider>
+    <md-card-content>
+      <div layout="row">
+        <div flex layout="row" class="push-right push-left">
+          <div class="ios-device"></div>
+        </div>
+        <div flex>
+          <form class="example-form">
+            <md-input-container class="example-full-width">
+              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color" [value]="color"/>
+            </md-input-container>
+            <br>
+            <md-input-container class="example-full-width">
+              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color" [value]="color"/>
+            </md-input-container>
+            <br>
+            <md-input-container class="example-full-width">
+              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color" [value]="color"/>
+            </md-input-container>
+            <br>
+            <md-input-container class="example-full-width">
+              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color" [value]="color"/>
+            </md-input-container>
+            <br>
+            <md-input-container class="example-full-width">
+              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color" [value]="color"/>
+            </md-input-container>
+            <br>
+            <md-input-container class="example-full-width">
+              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color" [value]="color"/>
+            </md-input-container>
+            <br>
+          </form>
+
+        </div>
+      </div>
+    </md-card-content>
+    <br>
+    <md-divider></md-divider>
+    <br>
+  </md-card>
+
+  <td-layout-footer>
+    <div layout="row" layout-align="start center">
+      <span class="md-caption">Copyright &copy; 2016 check point. All rights reserved</span>
+      <span flex></span>
+      <md-icon class="md-icon-ux" svgIcon="assets:teradata-ux"></md-icon>
+    </div>
+  </td-layout-footer>
+</td-layout-nav-list>
