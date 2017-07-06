@@ -135,7 +135,7 @@
             </td-file-upload>
             <br>
             <td-file-upload #singleFileUpload4 accept=".png" (select)="selectEvent($event, 'deviceIcon.png')" (upload)="uploadEvent($event)" (cancel)="cancelEvent('deviceIcon.png')" >
-              <md-icon>file_upload</md-icon><span>{{ singleFileUpload4.files?.name }}</span>
+              <md-icon class="material-icons">file_upload</md-icon><span>{{ singleFileUpload4.files?.name }}</span>
               <ng-template td-file-input-label>
                 <md-icon>attach_file</md-icon><span>Choose deviceIcon.png...</span>
               </ng-template>
@@ -156,7 +156,7 @@
             </td-file-upload>
             <br>
             <td-file-upload #singleFileUpload7 accept=".png" (select)="selectEvent($event, 'networkIcon.png')" (upload)="uploadEvent($event)" (cancel)="cancelEvent('networkIcon.png')" >
-              <md-icon>file_upload</md-icon><span>{{ singleFileUpload7.files?.name }}</span>
+              <md-icon class="material-icons">file_upload</md-icon><span>{{ singleFileUpload7.files?.name }}</span>
               <ng-template td-file-input-label>
                 <md-icon>attach_file</md-icon><span>Choose networkIcon.png...</span>
               </ng-template>
