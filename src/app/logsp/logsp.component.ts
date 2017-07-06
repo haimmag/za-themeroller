@@ -9,6 +9,9 @@ import { GenerateComponent } from './components/generate/generate.component';
 
 import {MdDialog, MdDialogRef, MdDialogConfig, MD_DIALOG_DATA} from '@angular/material';
 import { TdFileService, IUploadOptions } from '@covalent/core';
+import { DataService } from '../../services/data.service';
+import { Response, Http, Headers, RequestOptions } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'qs-logsp',
@@ -38,8 +41,9 @@ export class LogspComponent implements AfterViewInit, OnInit {
               public media:TdMediaService,
               private _dialogService:TdDialogService,
               private _viewContainerRef: ViewContainerRef,
-              private fileUploadService: TdFileService) {
-
+              private fileUploadService: TdFileService,
+              private dataService: DataService,
+              private _http: Http) {
   }
 
   ngOnInit():void {
@@ -47,12 +51,24 @@ export class LogspComponent implements AfterViewInit, OnInit {
   }
 
   doGenerate():void {
-
     this.dialogRef = this._dialogService.open(GenerateComponent, {width: '600px'});
     this.dialogRef.componentInstance.dialogRef = this.dialogRef;
     this.dialogRef.afterClosed().subscribe((newValue:Object) => {
       if (newValue != 'cancel') {
-        debugger;
+        newValue['threatColor'] = this.threatColor;
+        newValue['riskColor'] = this.riskColor;
+        newValue['safeColor'] = this.safeColor;
+        newValue['analyzingColor'] = this.analyzingColor;
+        newValue['mainBacgkroundColor'] = this.bgColor;
+        newValue['mainTextColor'] = this.textColor;
+        newValue['rowTextColor'] = this.textColor;
+        newValue['rowBackground'] = this.bgColor;
+        newValue['circlesOrRectangles'] = 'circles';
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        this._http.post('/uploadSettings', JSON.stringify(newValue), options)
+          .map((res:Response) => res.json())
+          .catch((error:any) => Observable.throw(error.json().error || 'Server error')).subscribe();
       }
     })
   }

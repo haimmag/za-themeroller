@@ -26,6 +26,7 @@ import { GenerateComponent } from './logsp/components/generate/generate.componen
 import { CovalentDialogsModule } from '@covalent/core';
 import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 import { CovalentFileModule } from '@covalent/core';
+import { DataService } from '../services/data.service';
 
 const httpInterceptorProviders: Type<any>[] = [
   RequestInterceptor,
@@ -66,6 +67,7 @@ export function getAPI(): string {
   ], // modules needed to run this module
   providers: [
     httpInterceptorProviders,
+    DataService,
     Title, {
       provide: USERS_API, useFactory: getAPI,
     }, USER_PROVIDER,

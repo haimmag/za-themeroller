@@ -2,7 +2,7 @@ const PROXY_CONFIG = [
     {
         context: [
             "/uploadfile",
-            "/updateSettings",
+            "/uploadSettings",
         ],
         target: "http://localhost:5000",
         secure: false
