@@ -1,11 +1,12 @@
-<md-toolbar color="primary">
+<td-layout-nav logo="assets:covalent">
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
   <span>
-      <img style="vertical-align:middle; height:48px;width:48px;" src="assets/images/transparentZa.png" />
+      <img style="vertical-align:middle; height:48px;width:48px;" src="assets/images/transparentZa.png"/>
       <span style="margin-right:150px; font-style:italic;">ZoneAlarm ThemeRoller</span>
       <button md-raised-button color="accent" class="text-upper" (click)="doGenerate()">Generate...</button>
     </span>
-  <md-icon style="text-align:right;flex: 1 1 auto;">more_vert</md-icon>
-</md-toolbar>
+    <md-icon style="text-align:right;flex: 1 1 auto;">more_vert</md-icon>
+  </div>
 
   <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
     <md-divider></md-divider>
@@ -35,7 +36,7 @@
         </div>
         <div *ngIf="mobile_preview=='ios'" flex layout="row">
           <app-ios-layout [backgroundColor]="bgColor">
-            <app-main-page [textColor]="textColor"></app-main-page>
+            <app-info-page [textColor]="textColor" [safeColor]="safeColor" [riskColor]="riskColor"></app-info-page>
           </app-ios-layout>
         </div>
         <div *ngIf="mobile_preview=='android'" flex layout="row">
@@ -50,7 +51,7 @@
         </div>
         <div *ngIf="mobile_preview=='android'" flex layout="row">
           <app-android-layout [backgroundColor]="bgColor">
-            <app-main-page [textColor]="textColor"></app-main-page>
+            <app-info-page [textColor]="textColor" [safeColor]="safeColor" [riskColor]="riskColor"></app-info-page>
           </app-android-layout>
         </div>
         <div flex>
@@ -66,7 +67,8 @@
             </md-input-container>
             <br>
             <md-input-container class="example-full-width">
-              <input mdInput placeholder="Analyzing color" [(colorPicker)]="analyzingColor" [style.background]="analyzingColor"
+              <input mdInput placeholder="Analyzing color" [(colorPicker)]="analyzingColor"
+                     [style.background]="analyzingColor"
                      [value]="analyzingColor"/>
             </md-input-container>
             <br>
@@ -76,8 +78,8 @@
             </md-input-container>
             <br>
             <md-input-container class="example-full-width">
-              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color"
-                     [value]="color"/>
+              <input mdInput placeholder="Safe color" [(colorPicker)]="safeColor" [style.background]="safeColor"
+                     [value]="safeColor"/>
             </md-input-container>
             <br>
             <md-input-container class="example-full-width">
@@ -163,3 +165,4 @@
       <span flex></span>
     </div>
   </td-layout-footer>
+</td-layout-nav>
