@@ -1,7 +1,9 @@
 <div>
-  <div class="za-logo">&nbsp;</div>
+  <div class="za-logo" [ngStyle]="{'background-color': actionBarColor}">
+        <img [src]="logo" />
+  </div>
 
-  <div class="scanning push-top-xl" [ngStyle]="{'color': textColor}">
+  <div class="scanning push-top" [ngStyle]="{'color': textColor}">
     SCANNING...
   </div>
 
