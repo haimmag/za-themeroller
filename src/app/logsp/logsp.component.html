@@ -1,4 +1,4 @@
-<td-layout-nav logo="assets:covalent">
+<td-layout-nav>
   <div td-toolbar-content layout="row" layout-align="center center" flex>
   <span>
       <img style="vertical-align:middle; height:48px;width:48px;" src="assets/images/transparentZa.png"/>
@@ -26,32 +26,48 @@
       <div layout="row">
         <div *ngIf="mobile_preview=='ios'" flex layout="row">
           <app-ios-layout [backgroundColor]="bgColor">
-            <app-main-page [textColor]="textColor" [analyzingColor]="analyzingColor"></app-main-page>
+            <app-main-page
+              [textColor]="textColor" [analyzingColor]="analyzingColor"
+              [actionBarColor]="actionBarColor" [logo]="srcLogo"></app-main-page>
           </app-ios-layout>
         </div>
         <div *ngIf="mobile_preview=='ios'" flex layout="row">
           <app-ios-layout [backgroundColor]="bgColor">
-            <app-risk-page [textColor]="textColor" [riskColor]="riskColor"></app-risk-page>
+            <app-risk-page
+              [textColor]="textColor" [riskColor]="riskColor"
+              [actionBarColor]="actionBarColor" [logo]="srcLogo"
+              [deviceIcon]="deviceIcon" [appsIcon]="appsIcon" [networkIcon]="networkIcon"></app-risk-page>
           </app-ios-layout>
         </div>
         <div *ngIf="mobile_preview=='ios'" flex layout="row">
           <app-ios-layout [backgroundColor]="bgColor">
-            <app-info-page [textColor]="textColor" [safeColor]="safeColor" [riskColor]="riskColor"></app-info-page>
+            <app-info-page
+              [textColor]="textColor" [safeColor]="safeColor"
+              [riskColor]="riskColor" [actionBarColor]="actionBarColor" [logo]="srcLogo"
+              [deviceIcon]="deviceIcon" [rowBackground]="rowBackground" [rowTextColor]="rowTextColor"></app-info-page>
           </app-ios-layout>
         </div>
         <div *ngIf="mobile_preview=='android'" flex layout="row">
           <app-android-layout [backgroundColor]="bgColor">
-            <app-main-page [textColor]="textColor" [analyzingColor]="analyzingColor"></app-main-page>
+            <app-main-page
+              [textColor]="textColor" [analyzingColor]="analyzingColor"
+              [actionBarColor]="actionBarColor" [logo]="srcLogo"></app-main-page>
           </app-android-layout>
         </div>
         <div *ngIf="mobile_preview=='android'" flex layout="row">
           <app-android-layout [backgroundColor]="bgColor">
-            <app-risk-page [textColor]="textColor" [riskColor]="riskColor"></app-risk-page>
+            <app-risk-page
+              [textColor]="textColor" [riskColor]="riskColor"
+              [actionBarColor]="actionBarColor" [logo]="srcLogo"
+              [deviceIcon]="deviceIcon" [appsIcon]="appsIcon" [networkIcon]="networkIcon"></app-risk-page>
           </app-android-layout>
         </div>
         <div *ngIf="mobile_preview=='android'" flex layout="row">
           <app-android-layout [backgroundColor]="bgColor">
-            <app-info-page [textColor]="textColor" [safeColor]="safeColor" [riskColor]="riskColor"></app-info-page>
+            <app-info-page
+              [textColor]="textColor" [safeColor]="safeColor"
+              [riskColor]="riskColor" [actionBarColor]="actionBarColor" [logo]="srcLogo"
+              [deviceIcon]="deviceIcon" [rowBackground]="rowBackground" [rowTextColor]="rowTextColor"></app-info-page>
           </app-android-layout>
         </div>
         <div flex>
@@ -83,72 +99,78 @@
             </md-input-container>
             <br>
             <md-input-container class="example-full-width">
-              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color"
-                     [value]="color"/>
+              <input mdInput placeholder="ActionBar color" [(colorPicker)]="actionBarColor" [style.background]="actionBarColor"
+                     [value]="actionBarColor"/>
             </md-input-container>
             <br>
             <md-input-container class="example-full-width">
-              <input mdInput placeholder="Background color" [(colorPicker)]="color" [style.background]="color"
-                     [value]="color"/>
+              <input mdInput placeholder="Row Background color" [(colorPicker)]="rowBackground" [style.background]="rowBackground"
+                     [value]="rowBackground"/>
             </md-input-container>
             <br>
-            <td-file-upload #singleFileUpload accept=".png" (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" >
-              <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
+            <md-input-container class="example-full-width">
+              <input mdInput placeholder="Raw Text color" [(colorPicker)]="rowTextColor" [style.background]="rowTextColor"
+                     [value]="rowTextColor"/>
+            </md-input-container>
+            <br>
+            <td-file-upload #singleFileUpload1 accept=".png" (select)="selectEvent($event, 'icon.png')" (upload)="uploadEvent($event)" (cancel)="cancelEvent('icon.png')" >
+              <md-icon class="material-icons">file_upload</md-icon><span>{{ singleFileUpload1.files?.name }}</span>
               <ng-template td-file-input-label>
                 <md-icon>attach_file</md-icon><span>Choose icon.png...</span>
               </ng-template>
             </td-file-upload>
             <br>
-            <td-file-upload #singleFileUpload accept=".png" (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" >
-              <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
+            <td-file-upload #singleFileUpload2 accept=".png" (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" >
+              <md-icon class="material-icons">file_upload</md-icon><span>{{ singleFileUpload2.files?.name }}</span>
               <ng-template td-file-input-label>
                 <md-icon>attach_file</md-icon><span>Choose threatIcon.png...</span>
               </ng-template>
             </td-file-upload>
             <br>
-            <td-file-upload #singleFileUpload accept=".png" (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" >
-              <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
+            <td-file-upload #singleFileUpload3 accept=".png" (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" >
+              <md-icon class="material-icons">file_upload</md-icon><span>{{ singleFileUpload3.files?.name }}</span>
               <ng-template td-file-input-label>
                 <md-icon>attach_file</md-icon><span>Choose riskIcon.png...</span>
               </ng-template>
             </td-file-upload>
             <br>
-            <td-file-upload #singleFileUpload accept=".png" (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" >
-              <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
+            <td-file-upload #singleFileUpload4 accept=".png" (select)="selectEvent($event, 'deviceIcon.png')" (upload)="uploadEvent($event)" (cancel)="cancelEvent('deviceIcon.png')" >
+              <md-icon>file_upload</md-icon><span>{{ singleFileUpload4.files?.name }}</span>
               <ng-template td-file-input-label>
                 <md-icon>attach_file</md-icon><span>Choose deviceIcon.png...</span>
               </ng-template>
             </td-file-upload>
             <br>
-            <td-file-upload #singleFileUpload accept=".png" (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" >
-              <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
+            <td-file-upload #singleFileUpload5 accept=".png" (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" >
+              <md-icon class="material-icons">file_upload</md-icon><span>{{ singleFileUpload5.files?.name }}</span>
               <ng-template td-file-input-label>
                 <md-icon>attach_file</md-icon><span>Choose safeIcon.png...</span>
               </ng-template>
             </td-file-upload>
             <br>
-            <td-file-upload #singleFileUpload accept=".png" (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" >
-              <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
+            <td-file-upload #singleFileUpload6 accept=".png" (select)="selectEvent($event, 'appsIcon.png')" (upload)="uploadEvent($event)" (cancel)="cancelEvent('appsIcon.png')" >
+              <md-icon class="material-icons">file_upload</md-icon><span>{{ singleFileUpload6.files?.name }}</span>
               <ng-template td-file-input-label>
                 <md-icon>attach_file</md-icon><span>Choose appsIcon.png...</span>
               </ng-template>
             </td-file-upload>
             <br>
-            <td-file-upload #singleFileUpload accept=".png" (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" >
-              <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
+            <td-file-upload #singleFileUpload7 accept=".png" (select)="selectEvent($event, 'networkIcon.png')" (upload)="uploadEvent($event)" (cancel)="cancelEvent('networkIcon.png')" >
+              <md-icon>file_upload</md-icon><span>{{ singleFileUpload7.files?.name }}</span>
               <ng-template td-file-input-label>
                 <md-icon>attach_file</md-icon><span>Choose networkIcon.png...</span>
               </ng-template>
             </td-file-upload>
             <br>
-            <td-file-upload #singleFileUpload accept=".png" (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" >
-              <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
+            <td-file-upload #singleFileUpload8 accept=".png" (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" >
+              <md-icon class="material-icons">file_upload</md-icon><span>{{ singleFileUpload8.files?.name }}</span>
               <ng-template td-file-input-label>
                 <md-icon>attach_file</md-icon><span>Choose splashScreenLogo.png...</span>
               </ng-template>
             </td-file-upload>
             <br>
             <br>
+
           </form>
 
         </div>

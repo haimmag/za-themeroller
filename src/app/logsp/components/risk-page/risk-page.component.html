@@ -1,7 +1,9 @@
 <div>
-  <div class="za-logo">&nbsp;</div>
+  <div class="za-logo" [ngStyle]="{'background-color': actionBarColor}">
+    <img [src]="logo" />
+  </div>
 
-  <div class="scanning push-top-xl" [ngStyle]="{'color': riskColor}">
+  <div class="scanning push-top" [ngStyle]="{'color': riskColor}">
     RISKS DETECTED!
   </div>
   <div class="scanning now" [ngStyle]="{'color': textColor}">
@@ -19,11 +21,11 @@
     </svg>
   </div>
 
-  <div class="icons" [ngStyle]="{'color': textColor}">
+  <div class="icons push-top-xl" [ngStyle]="{'color': textColor}">
     <div layout="row" class="md-padding">
       <div flex layout="column" layout-align="center center" class="relative">
         <div class="risk-icon round">
-            <img class="img" src="assets/za/deviceIcon.png"/>
+          <img class="img" [src]="deviceIcon"/>
         </div>
         <span class="risk-lbl">
             MY DEVICE
@@ -31,7 +33,7 @@
       </div>
       <div flex layout="column" layout-align="center center" class="relative">
         <div class="risk-icon round" [ngClass]="{}">
-          <img class="img" src="assets/za/appsIcon.png"/>
+          <img class="img" [src]="appsIcon"/>
         </div>
         <span class="risk-lbl">
             MY APPS
@@ -39,7 +41,7 @@
       </div>
       <div flex layout="column" layout-align="center center" class="relative">
         <div class="risk-icon round">
-            <img class="img" src="assets/za/networkIcon.png"/>
+          <img class="img" [src]="networkIcon"/>
         </div>
         <span class="risk-lbl">
             MY NETWORK

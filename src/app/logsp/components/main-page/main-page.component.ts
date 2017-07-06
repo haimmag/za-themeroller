@@ -9,6 +9,8 @@ export class MainPageComponent implements OnInit {
 
   @Input() textColor = '#fff';
   @Input() analyzingColor = '#f94675';
+  @Input() actionBarColor = "#19191B";
+  @Input() logo = "/assets/images/transparentZa.png";
 
   constructor() { }
 

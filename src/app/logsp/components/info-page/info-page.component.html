@@ -1,14 +1,16 @@
 <div>
-  <div class="za-logo">&nbsp;</div>
+  <div class="za-logo" [ngStyle]="{'background-color': actionBarColor}">
+    <img [src]="logo" />
+  </div>
 
-  <div class="scanning push-top-xl" [ngStyle]="{'color': riskColor}">
+  <div class="scanning push-top" [ngStyle]="{'color': riskColor}">
     RISKS DETECTED!
   </div>
     <div class="icons" [ngStyle]="{'color': textColor}">
     <div layout="row">
       <div flex layout="column" layout-align="center center" class="relative">
         <div class="risk-icon round">
-            <img class="img" src="assets/za/deviceIcon.png"/>
+            <img class="img" [src]="deviceIcon"/>
         </div>
         <span class="risk-lbl">
             MY DEVICE
@@ -18,19 +20,19 @@
   </div>
 
   <div class="md-padding">
-    <div class="risk" [ngStyle]="{'border-left': '4px solid ' + safeColor }">
+    <div class="risk" [ngStyle]="{'border-left': '4px solid ' + safeColor, 'background-color': rowBackground, 'color':rowTextColor }">
       Your device is not rooted
     </div>
-    <div class="risk" [ngStyle]="{'border-left': '4px solid ' + safeColor }">
+    <div class="risk" [ngStyle]="{'border-left': '4px solid ' + safeColor, 'background-color': rowBackground, 'color':rowTextColor }">
       ZoneAlarm is up-to-date
     </div>
-    <div class="risk" [ngStyle]="{'border-left': '4px solid ' + riskColor }">
+    <div class="risk" [ngStyle]="{'border-left': '4px solid ' + riskColor, 'background-color': rowBackground, 'color':rowTextColor }">
       Certifi-gate vulnerability found
     </div>
-    <div class="risk" [ngStyle]="{'border-left': '4px solid ' + riskColor }">
+    <div class="risk" [ngStyle]="{'border-left': '4px solid ' + riskColor, 'background-color': rowBackground, 'color':rowTextColor }">
       Unknown source apps are allowed
     </div>
-    <div class="risk" [ngStyle]="{'border-left': '4px solid ' + riskColor }">
+    <div class="risk" [ngStyle]="{'border-left': '4px solid ' + riskColor, 'background-color': rowBackground, 'color':rowTextColor }">
       UDB debugging mode is on
     </div>
   </div>

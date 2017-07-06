@@ -48,13 +48,16 @@
 }
 
 .za-logo {
-  background-image: url("/assets/images/za-logo.png");
-  background-repeat: no-repeat;
-  background-size: 302px 41px;
   width: 100%;
   height: 42px;
   display: inline-block;
   box-sizing: border-box;
+  padding: 5px;
+
+  img{
+    max-width: 60px;
+    max-height: 30px;
+  }
 }
 
 .scanning {

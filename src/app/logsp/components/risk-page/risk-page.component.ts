@@ -9,6 +9,11 @@ export class RiskPageComponent implements OnInit {
 
   @Input() textColor = '#fff';
   @Input() riskColor = "#ff8b19";
+  @Input() actionBarColor = "#19191B";
+  @Input() logo = "/assets/images/transparentZa.png";
+  @Input() deviceIcon = "/assets/za/deviceIcon.png";
+  @Input() appsIcon = "/assets/za/appsIcon.png";
+  @Input() networkIcon = "/assets/za/networkIcon.png";
 
   constructor() { }
 
