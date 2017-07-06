@@ -20,7 +20,7 @@ import { TdFileService, IUploadOptions } from '@covalent/core';
 export class LogspComponent implements AfterViewInit, OnInit {
 
   mobile_preview = 'ios';
-  bgColor: string = '#127bdc';
+  bgColor: string = '#1a1a1a';
   textColor: string = '#fff';
   threatColor: string = "#CC2436";
   riskColor: string = "#ff8b19";
