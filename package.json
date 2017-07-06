@@ -9,7 +9,7 @@
     "reusable"
   ],
   "scripts": {
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.conf.json",
     "e2e": "ng e2e",
     "lint": "ng lint",
     "reinstall": "rm -rf node_modules tmp deploy dist && npm i",

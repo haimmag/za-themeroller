@@ -90,6 +90,63 @@
                      [value]="color"/>
             </md-input-container>
             <br>
+            <td-file-upload #singleFileUpload accept=".png" (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" >
+              <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
+              <ng-template td-file-input-label>
+                <md-icon>attach_file</md-icon><span>Choose icon.png...</span>
+              </ng-template>
+            </td-file-upload>
+            <br>
+            <td-file-upload #singleFileUpload accept=".png" (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" >
+              <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
+              <ng-template td-file-input-label>
+                <md-icon>attach_file</md-icon><span>Choose threatIcon.png...</span>
+              </ng-template>
+            </td-file-upload>
+            <br>
+            <td-file-upload #singleFileUpload accept=".png" (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" >
+              <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
+              <ng-template td-file-input-label>
+                <md-icon>attach_file</md-icon><span>Choose riskIcon.png...</span>
+              </ng-template>
+            </td-file-upload>
+            <br>
+            <td-file-upload #singleFileUpload accept=".png" (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" >
+              <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
+              <ng-template td-file-input-label>
+                <md-icon>attach_file</md-icon><span>Choose deviceIcon.png...</span>
+              </ng-template>
+            </td-file-upload>
+            <br>
+            <td-file-upload #singleFileUpload accept=".png" (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" >
+              <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
+              <ng-template td-file-input-label>
+                <md-icon>attach_file</md-icon><span>Choose safeIcon.png...</span>
+              </ng-template>
+            </td-file-upload>
+            <br>
+            <td-file-upload #singleFileUpload accept=".png" (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" >
+              <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
+              <ng-template td-file-input-label>
+                <md-icon>attach_file</md-icon><span>Choose appsIcon.png...</span>
+              </ng-template>
+            </td-file-upload>
+            <br>
+            <td-file-upload #singleFileUpload accept=".png" (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" >
+              <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
+              <ng-template td-file-input-label>
+                <md-icon>attach_file</md-icon><span>Choose networkIcon.png...</span>
+              </ng-template>
+            </td-file-upload>
+            <br>
+            <td-file-upload #singleFileUpload accept=".png" (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" >
+              <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
+              <ng-template td-file-input-label>
+                <md-icon>attach_file</md-icon><span>Choose splashScreenLogo.png...</span>
+              </ng-template>
+            </td-file-upload>
+            <br>
+            <br>
           </form>
 
         </div>
@@ -104,6 +161,5 @@
     <div layout="row" layout-align="start center">
       <span class="md-caption">Copyright &copy; 2017 check point. All rights reserved</span>
       <span flex></span>
-      <md-icon class="md-icon-ux" svgIcon="assets:teradata-ux"></md-icon>
     </div>
   </td-layout-footer>

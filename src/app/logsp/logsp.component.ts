@@ -8,12 +8,14 @@ import { ITdDynamicElementConfig, TdDynamicElement, TdDynamicType } from '@coval
 import { GenerateComponent } from './components/generate/generate.component';
 
 import {MdDialog, MdDialogRef, MdDialogConfig, MD_DIALOG_DATA} from '@angular/material';
+import { TdFileService, IUploadOptions } from '@covalent/core';
 
 @Component({
   selector: 'qs-logsp',
   templateUrl: './logsp.component.html',
   styleUrls: ['./logsp.component.scss'],
   viewProviders: [ ItemsService, ProductsService ],
+  providers: [ TdFileService ],
 })
 export class LogspComponent implements AfterViewInit, OnInit {
 
@@ -35,7 +37,8 @@ export class LogspComponent implements AfterViewInit, OnInit {
               private _changeDetectorRef:ChangeDetectorRef,
               public media:TdMediaService,
               private _dialogService:TdDialogService,
-              private _viewContainerRef: ViewContainerRef) {
+              private _viewContainerRef: ViewContainerRef,
+              private fileUploadService: TdFileService) {
 
   }
 
@@ -48,7 +51,6 @@ export class LogspComponent implements AfterViewInit, OnInit {
     this.dialogRef = this._dialogService.open(GenerateComponent, {width: '600px'});
     this.dialogRef.componentInstance.dialogRef = this.dialogRef;
     this.dialogRef.afterClosed().subscribe((newValue:Object) => {
-      debugger;
       if (newValue != 'cancel') {
         debugger;
       }
@@ -61,6 +63,24 @@ export class LogspComponent implements AfterViewInit, OnInit {
     // force a new change detection cycle since change detections
     // have finished when `ngAfterViewInit` is executed
     this._changeDetectorRef.detectChanges();
+  }
+
+  selectEvent(file: File): void {
+  }
+
+  uploadEvent(file: File): void {
+    //debugger;
+    let options: IUploadOptions = {
+      url: '/uploadfile?filename='+file.name,
+      method: 'post',
+      file: file,
+    };
+    this.fileUploadService.upload(options).subscribe((response) => {
+      //debugger;
+    });
+  }
+
+  cancelEvent(): void {
   }
 
 }

@@ -24,6 +24,7 @@ import { RiskPageComponent } from './logsp/components/risk-page/risk-page.compon
 import { GenerateComponent } from './logsp/components/generate/generate.component';
 import { CovalentDialogsModule } from '@covalent/core';
 import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
+import { CovalentFileModule } from '@covalent/core';
 
 const httpInterceptorProviders: Type<any>[] = [
   RequestInterceptor,
@@ -58,7 +59,8 @@ export function getAPI(): string {
     ColorPickerModule,
     MdRadioModule,
     CovalentDialogsModule,
-    CovalentDynamicFormsModule
+    CovalentDynamicFormsModule,
+    CovalentFileModule,
   ], // modules needed to run this module
   providers: [
     httpInterceptorProviders,
